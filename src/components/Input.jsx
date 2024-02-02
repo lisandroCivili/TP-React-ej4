@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
+import Tareas from './Tareas'
+const TareasApp = () => {
+  const [tarea, setTarea] = useState('');
+  const [tareas, setTareas] = useState([]);
 
-const Input = () => {
-
-    
-    const [listaTareas, setListaTareas] = useState([]);
-    const [tarea, setTarea] = useState("");
-    
-    const guardarTarea = (event) =>{
-        setTarea(event.target.value);
-        console.log(tarea);
+  const manejarEventoEnter = (e) => {
+    if (e.key === 'Enter') {
+      setTareas([...tareas, tarea]);
+      setTarea('');
     }
+  };
 
-
-
-    return (
-        <form>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="inputTarea"
-              placeholder="Ej: Asistir reunión 5pm"
-              value={tarea}
-              onChange={guardarTarea}
-            />
-          </div>
-        </form>
-        
-    );
+  return (
+    <div>
+      <h1>Lista de Tareas</h1>
+      <input
+        type="text"
+        placeholder="Ingrese una tarea"
+        value={tarea}
+        onChange={(e) => setTarea(e.target.value)}
+        onKeyDown={manejarEventoEnter}
+      />
+      <Tareas arrayTareas={tareas}/>
+    </div>
+  );
 };
 
-export default Input;
+export default TareasApp;
