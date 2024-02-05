@@ -13,7 +13,6 @@ const input = () => {
 
   return (
     <div>
-      <h1>Lista de Tareas</h1>
       <input
         type="text"
         placeholder="Ingrese una tarea"
