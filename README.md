@@ -2,8 +2,8 @@
 
 Aplicacion web para agregar tareas "to do" realizado con react.
 
-##Link al sitio
+## Link al sitio
 [To Do App]()
 
-##Autor
+## Autor
 Lisandro Civili
