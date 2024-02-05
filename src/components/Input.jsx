@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Tareas from './Tareas'
-const TareasApp = () => {
+const input = () => {
   const [tarea, setTarea] = useState('');
   const [tareas, setTareas] = useState([]);
 
   const manejarEventoEnter = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && tarea.trim() !== '') {
       setTareas([...tareas, tarea]);
       setTarea('');
     }
@@ -13,7 +13,6 @@ const TareasApp = () => {
 
   return (
     <div>
-      <h1>Lista de Tareas</h1>
       <input
         type="text"
         placeholder="Ingrese una tarea"
@@ -26,4 +25,4 @@ const TareasApp = () => {
   );
 };
 
-export default TareasApp;
+export default input;
